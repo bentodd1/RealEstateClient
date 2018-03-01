@@ -1,0 +1,59 @@
+<!--
+  Generated template for the MarketDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--{-->
+<!--cbsa:'New York-Newark-Jersey City, NY-NJ-PA',-->
+<!--size:0,-->
+<!--health:9.3453524533,-->
+<!--sfg:95.73,-->
+<!--pf:1.0234,-->
+<!--fr:0.0254,-->
+<!--fyoy:0.038965-->
+<!--ne:0.067887-->
+<!--d:0.09989,-->
+<!--dom:155-->
+<!--}-->
+<ion-content>
+  <ion-list padding-top>
+    <ion-item no-padding>
+      <span class="body-1 gray">CBSA Title</span>
+      <p class="body-2">{{market.cbsa}}</p>
+    </ion-item>
+
+    <ion-item no-padding>
+      <span class="body-1 gray">Size Rank</span>
+      <p class="body-2">{{market.size}}</p>
+    </ion-item>
+
+    <ion-item no-padding>
+      <span class="body-1 gray">Health Index</span>
+      <p class="body-2">{{market.health}}</p>
+    </ion-item>
+
+    <ion-item no-padding>
+      <span class="body-1 gray">Sell for Gain</span>
+      <p class="body-2">{{market.sfg}}</p>
+    </ion-item>
+
+    <ion-item no-padding>
+      <span class="body-1 gray">Prev Foreclosed</span>
+      <p class="body-2">{{market.pf}}</p>
+    </ion-item>
+
+    <ion-item no-padding>
+      <span class="body-1 gray">Foreclosure Ratio</span>
+      <p class="body-2">{{market.fr}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
