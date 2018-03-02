@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {MarketDetailPage} from "../market-detail/market-detail";
+import {RealEstateProvider} from "../../providers/realEstate";
 
 @Component({
   selector: 'page-home',
@@ -71,9 +72,9 @@ export class HomePage {
         });
       }
   }
-
+//TODO get this right
   initializeItems() {
-    this.markets = this._markets;
+    this.markets = this.RealEstateProvider.getAllRealEstate();
   }
 
 }
