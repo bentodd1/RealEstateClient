@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {MarketDetailPage} from "../market-detail/market-detail";
-import {RealEstateProvider} from "../../providers/realEstate";
+import {RealEstateProvider} from "../../providers/realEstateProvider";
 
 @Component({
   selector: 'page-home',
@@ -52,7 +52,7 @@ export class HomePage {
     }
   ];
   markets = [];
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public realEstateProvider:RealEstateProvider) {
     this.initializeItems();
   }
 
@@ -74,7 +74,7 @@ export class HomePage {
   }
 //TODO get this right
   initializeItems() {
-    this.markets = this.RealEstateProvider.getAllRealEstate();
+      this.markets = this.realEstateProvider.getAllRealEstate();
   }
 
 }

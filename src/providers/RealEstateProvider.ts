@@ -35,5 +35,7 @@ export class RealEstateProvider {
   getRealEstateByMetro(metro){
   	return this.http.get('http://ec2-34-216-65-142.us-west-2.compute.amazonaws.com:5000/market/metro/' + metro)
   }
-
+ getAllRealEstate(){
+	return this.http.get('http://ec2-34-216-65-142.us-west-2.compute.amazonaws.com:5000/market/');
+}
 }
