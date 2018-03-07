@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {MarketDetailPage} from "../market-detail/market-detail";
-import {RealEstateProvider} from "../../providers/realEstateProvider";
+import {RealEstateProvider} from "../../providers/real-estate/real-estate";
 
 @Component({
   selector: 'page-home',
@@ -9,51 +9,15 @@ import {RealEstateProvider} from "../../providers/realEstateProvider";
 })
 export class HomePage {
   pageTitle = 'Market Health';
-  _markets = [
-    {
-      city:'Kansas City',
-      zip:'64109',
-      health:6.4
-    },
-    {
-      city:'Kansas City',
-      zip:'64110',
-      health:8
-    },
-    {
-      city:'Kansas City',
-      zip:'64134',
-      health:4
-    },
-    {
-      city:'Kansas City',
-      zip:'64155',
-      health:86.1
-    },
-    {
-      city:'Kansas City',
-      zip:'64196',
-      health:8.4
-    },
-    {
-      city:'Overland Park',
-      zip:'66207',
-      health:5.1
-    },
-    {
-      city:'Overland Park',
-      zip:'66221',
-      health:3
-    },
-    {
-      city:'Overland Parky',
-      zip:'66283',
-      health:7
-    }
-  ];
-  markets = [];
+  _markets:any = [];
+  markets:any = [];
   constructor(public navCtrl: NavController, public realEstateProvider:RealEstateProvider) {
-    this.initializeItems();
+
+    this.realEstateProvider.getAllRealEstate().subscribe((res)=>{
+      this._markets = res;
+      console.log(JSON.stringify(res));
+      this.initializeItems()
+    })
   }
 
   goToDetail(market:any){
@@ -74,7 +38,7 @@ export class HomePage {
   }
 //TODO get this right
   initializeItems() {
-      this.markets = this.realEstateProvider.getAllRealEstate();
+      this.markets = this._markets;
   }
 
 }

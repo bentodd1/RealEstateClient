@@ -8,7 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {MarketDetailPageModule} from "../pages/market-detail/market-detail.module";
 import {MarketDetailPage} from "../pages/market-detail/market-detail";
-
+import { RealEstateProvider } from '../providers/real-estate/real-estate';
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     MyApp,
@@ -17,6 +18,7 @@ import {MarketDetailPage} from "../pages/market-detail/market-detail";
   imports: [
     BrowserModule,
     MarketDetailPageModule,
+      HttpClientModule,
     IonicModule.forRoot(MyApp, {
       preloadModule:false,
       mode:'md'
@@ -31,7 +33,10 @@ import {MarketDetailPage} from "../pages/market-detail/market-detail";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+      RealEstateProvider,
+    RealEstateProvider,
+    RealEstateProvider
   ]
 })
 export class AppModule {}
