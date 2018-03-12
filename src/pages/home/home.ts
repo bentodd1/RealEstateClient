@@ -14,9 +14,9 @@ export class HomePage {
   constructor(public navCtrl: NavController, public realEstateProvider:RealEstateProvider) {
 
     this.realEstateProvider.getAllRealEstate().subscribe((res)=>{
-      this._markets = res;
+      this._markets = res["markets"];
       console.log(JSON.stringify(res));
-      this.initializeItems()
+      this.initializeItems();
     })
   }
 
