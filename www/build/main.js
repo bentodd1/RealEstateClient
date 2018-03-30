@@ -376,34 +376,35 @@ var MarketDetailPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.pageTitle = 'Market Detail';
-        // this.checkParams();
-        this.market = {
-            cbsa: 'New York-Newark-Jersey City, NY-NJ-PA',
-            size: 0,
-            health: 9.3453524533,
-            sfg: 95.73,
-            pf: 1.0234,
-            fr: 0.0254,
-            fyoy: 0.038965,
-            ne: 0.067887,
-            d: 0.09989,
-            dom: 155
-        };
+        this.checkParams();
+        // this.market = {
+        //   cbsa:'New York-Newark-Jersey City, NY-NJ-PA',
+        //   size:0,
+        //   health:9.3453524533,
+        //   sfg:95.73,
+        //   pf:1.0234,
+        //   fr:0.0254,
+        //   fyoy:0.038965,
+        //   ne:0.067887,
+        //   d:0.09989,
+        //   dom:155
+        // };
     }
     MarketDetailPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad MarketDetailPage');
     };
     MarketDetailPage.prototype.checkParams = function () {
         this.market = this.navParams.get('market');
-        this.pageTitle = this.market.zip;
+        this.pageTitle = this.market._id;
     };
     MarketDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-market-detail',template:/*ion-inline-start:"/Users/kevinmontanez/Desktop/repos/RealEstateClient/src/pages/market-detail/market-detail.html"*/'<!--\n  Generated template for the MarketDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{pageTitle}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<!--{-->\n<!--cbsa:\'New York-Newark-Jersey City, NY-NJ-PA\',-->\n<!--size:0,-->\n<!--health:9.3453524533,-->\n<!--sfg:95.73,-->\n<!--pf:1.0234,-->\n<!--fr:0.0254,-->\n<!--fyoy:0.038965-->\n<!--ne:0.067887-->\n<!--d:0.09989,-->\n<!--dom:155-->\n<!--}-->\n<ion-content>\n  <ion-list padding-top>\n    <ion-item no-padding>\n      <span class="body-1 gray">CBSA Title</span>\n      <p class="body-2">{{market.cbsa}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Size Rank</span>\n      <p class="body-2">{{market.size}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Health Index</span>\n      <p class="body-2">{{market.health}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Sell for Gain</span>\n      <p class="body-2">{{market.sfg}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Prev Foreclosed</span>\n      <p class="body-2">{{market.pf}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Foreclosure Ratio</span>\n      <p class="body-2">{{market.fr}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/kevinmontanez/Desktop/repos/RealEstateClient/src/pages/market-detail/market-detail.html"*/,
+            selector: 'page-market-detail',template:/*ion-inline-start:"/Users/kevinmontanez/Desktop/repos/RealEstateClient/src/pages/market-detail/market-detail.html"*/'<!--\n  Generated template for the MarketDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{pageTitle}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<!--{-->\n<!--cbsa:\'New York-Newark-Jersey City, NY-NJ-PA\',-->\n<!--size:0,-->\n<!--health:9.3453524533,-->\n<!--sfg:95.73,-->\n<!--pf:1.0234,-->\n<!--fr:0.0254,-->\n<!--fyoy:0.038965-->\n<!--ne:0.067887-->\n<!--d:0.09989,-->\n<!--dom:155-->\n<!--}-->\n<ion-content>\n  <ion-list padding-top>\n    <ion-item no-padding>\n      <span class="body-1 gray">CBSA Title</span>\n      <p class="body-2">{{market?.CBSATitle}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Size Rank</span>\n      <p class="body-2">{{market?.SizeRank}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Health Index</span>\n      <p class="body-2">{{market?.MarketHealthIndex}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Sell for Gain</span>\n      <p class="body-2">{{market?.SellForGain}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Prev Foreclosed</span>\n      <p class="body-2">{{market?.SellForGain}}</p>\n    </ion-item>\n\n    <ion-item no-padding>\n      <span class="body-1 gray">Foreclosure Ratio</span>\n      <p class="body-2">{{market?.ForeclosureRatio}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/kevinmontanez/Desktop/repos/RealEstateClient/src/pages/market-detail/market-detail.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
     ], MarketDetailPage);
     return MarketDetailPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=market-detail.js.map
