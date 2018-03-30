@@ -15,7 +15,7 @@ export class HomePage {
 
     this.realEstateProvider.getAllRealEstate().subscribe((res)=>{
       this._markets = res["markets"];
-      // console.log(JSON.stringify(res));
+      console.log(JSON.stringify(res));
       this.initializeItems();
     })
   }
@@ -32,7 +32,7 @@ export class HomePage {
     // if the value is an empty string don't filter the items
       if (val && val.trim() != '') {
         this.markets = this._markets.filter((market) => {
-          return (market.city.toLowerCase().indexOf(val.toLowerCase()) > -1 || market.zip.toLowerCase().indexOf(val.toLowerCase()) > -1 );
+          return (market.City.toLowerCase().indexOf(val.toLowerCase()) > -1);
         });
       }
   }

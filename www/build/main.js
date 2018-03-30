@@ -111,7 +111,7 @@ var HomePage = (function () {
         this.markets = [];
         this.realEstateProvider.getAllRealEstate().subscribe(function (res) {
             _this._markets = res["markets"];
-            // console.log(JSON.stringify(res));
+            console.log(JSON.stringify(res));
             _this.initializeItems();
         });
     }
@@ -126,7 +126,7 @@ var HomePage = (function () {
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
             this.markets = this._markets.filter(function (market) {
-                return (market.city.toLowerCase().indexOf(val.toLowerCase()) > -1 || market.zip.toLowerCase().indexOf(val.toLowerCase()) > -1);
+                return (market.City.toLowerCase().indexOf(val.toLowerCase()) > -1);
             });
         }
     };
@@ -136,7 +136,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/kevinmontanez/Desktop/repos/RealEstateClient/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      {{pageTitle}}\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-searchbar [placeholder]="\'Enter a city or zip\'" (ionInput)="getSearchResults($event)"></ion-searchbar>\n  <ion-row padding align-items-center style="background: lightgray;height:44px">\n    <ion-col col-6 class="body-2 gray">City</ion-col>\n    <ion-col col-3 class="body-2 gray" text-center>Zip</ion-col>\n    <ion-col col-3 class="body-2 gray" text-right>Health</ion-col>\n  </ion-row>\n  <ion-row padding align-items-center *ngFor="let m of markets" style="height:44px;border-bottom:1px solid lightgray" (click)="goToDetail(m)">\n    <ion-col col-6 class="body-1 gray">{{m?.City}}</ion-col>\n    <ion-col col-3 class="body-1 gray" text-center>{{m?.State}}</ion-col>\n    <ion-col col-3 class="body-1 gray" text-right>{{m?.MarketHealthIndex}}</ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/kevinmontanez/Desktop/repos/RealEstateClient/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/kevinmontanez/Desktop/repos/RealEstateClient/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      {{pageTitle}}\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-searchbar [placeholder]="\'Enter a city or zip\'" (ionInput)="getSearchResults($event)"></ion-searchbar>\n  <ion-row padding align-items-center style="background: lightgray;height:44px">\n    <ion-col col-6 class="body-2 gray">City</ion-col>\n    <ion-col col-3 class="body-2 gray" text-center>State</ion-col>\n    <ion-col col-3 class="body-2 gray" text-right>Health</ion-col>\n  </ion-row>\n  <ion-row padding align-items-center *ngFor="let m of markets" style="height:44px;border-bottom:1px solid lightgray" (click)="goToDetail(m)">\n    <ion-col col-6 class="body-1 gray">{{m?.City}}</ion-col>\n    <ion-col col-3 class="body-1 gray" text-center>{{m?.State}}</ion-col>\n    <ion-col col-3 class="body-1 gray" text-right>{{m?.MarketHealthIndex}}</ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/kevinmontanez/Desktop/repos/RealEstateClient/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_real_estate_real_estate__["a" /* RealEstateProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_real_estate_real_estate__["a" /* RealEstateProvider */]) === "function" && _b || Object])
     ], HomePage);

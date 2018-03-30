@@ -10,7 +10,7 @@
   <ion-searchbar [placeholder]="'Enter a city or zip'" (ionInput)="getSearchResults($event)"></ion-searchbar>
   <ion-row padding align-items-center style="background: lightgray;height:44px">
     <ion-col col-6 class="body-2 gray">City</ion-col>
-    <ion-col col-3 class="body-2 gray" text-center>Zip</ion-col>
+    <ion-col col-3 class="body-2 gray" text-center>State</ion-col>
     <ion-col col-3 class="body-2 gray" text-right>Health</ion-col>
   </ion-row>
   <ion-row padding align-items-center *ngFor="let m of markets" style="height:44px;border-bottom:1px solid lightgray" (click)="goToDetail(m)">
