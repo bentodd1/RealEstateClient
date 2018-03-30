@@ -15,7 +15,7 @@ export class HomePage {
 
     this.realEstateProvider.getAllRealEstate().subscribe((res)=>{
       this._markets = res["markets"];
-      console.log(JSON.stringify(res));
+      // console.log(JSON.stringify(res));
       this.initializeItems();
     })
   }

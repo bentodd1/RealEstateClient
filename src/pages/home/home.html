@@ -14,8 +14,8 @@
     <ion-col col-3 class="body-2 gray" text-right>Health</ion-col>
   </ion-row>
   <ion-row padding align-items-center *ngFor="let m of markets" style="height:44px;border-bottom:1px solid lightgray" (click)="goToDetail(m)">
-    <ion-col col-6 class="body-1 gray">{{m.city}}</ion-col>
-    <ion-col col-3 class="body-1 gray" text-center>{{m.zip}}</ion-col>
-    <ion-col col-3 class="body-1 gray" text-right>{{m.health}}</ion-col>
+    <ion-col col-6 class="body-1 gray">{{m?.City}}</ion-col>
+    <ion-col col-3 class="body-1 gray" text-center>{{m?.State}}</ion-col>
+    <ion-col col-3 class="body-1 gray" text-right>{{m?.MarketHealthIndex}}</ion-col>
   </ion-row>
 </ion-content>
